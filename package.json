@@ -1,0 +1,17 @@
+{
+  "name": "n-tou-ryuu",
+  "version": "1.0.0",
+  "description": "n-edged language display",
+  "type": "module",
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "start": "node esbuild.config.js -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.13.7",
+    "esbuild-serve": "^1.0.1"
+  }
+}
