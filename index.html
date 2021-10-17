@@ -10,69 +10,75 @@
   </head>
   <body>
     <div id="navbar">
-      <button class="nav__button" id="nav-home-button">H</button>
-      <span class="nav__span"> n-tou-ryuu</span>
+      <span class="nav__span" id="story-name">n-tou-ryuu</span>
     </div>
     <div class="mainbar">
       <div class="mainbar__display">
         <div class="ryuu-container">
           <div class="ryuu-content" id="ryuu-content">
-            <div class="ryuu-tabs" data-index="0">
+            <div class="ryuu-tab" data-index="0">
               <span id="ryuu-line-0-english" class="ryuu-line english selected" data-language="english"
                 >This is the english sentence
               </span>
-              <span id="ryuu-line-1-dutch" class="ryuu-line dutch notselected" data-language="dutch"
+
+              <span id="ryuu-line-0-dutch" class="ryuu-line dutch notselected" data-language="dutch"
                 >This is the dutch sentence
               </span>
             </div>
-            <div class="ryuu-tabs" data-index="1">
-              <span id="ryuu-line-0-english" class="ryuu-line english notselected" data-language="english"
+
+            <div class="ryuu-tab" data-index="1">
+              <span id="ryuu-line-1-english" class="ryuu-line english notselected" data-language="english"
                 >This is the english sentence
               </span>
               <span id="ryuu-line-1-dutch" class="ryuu-line dutch selected" data-language="dutch"
                 >This is the dutch sentence
               </span>
             </div>
-            <div class="ryuu-tabs" data-index="2">
-              <span id="ryuu-line-0-english" class="ryuu-line english selected" data-language="english"
+
+            <div class="ryuu-tab" data-index="2">
+              <span id="ryuu-line-english" class="ryuu-line english selected" data-language="english"
                 >This is the english sentence
               </span>
               <span id="ryuu-line-1-dutch" class="ryuu-line dutch notselected" data-language="dutch"
                 >This is the dutch sentence
               </span>
             </div>
-            <div class="ryuu-tabs" data-index="3">
-              <span id="ryuu-line-0-english" class="ryuu-line english notselected" data-language="english"
+
+            <div class="ryuu-tab" data-index="3">
+              <span id="ryuu-line-english" class="ryuu-line english notselected" data-language="english"
                 >This is the english sentence
               </span>
               <span id="ryuu-line-1-dutch" class="ryuu-line dutch selected" data-language="dutch"
                 >This is the dutch sentence
               </span>
             </div>
-            <div class="ryuu-tabs" data-index="4">
-              <span id="ryuu-line-0-english" class="ryuu-line english selected" data-language="english"
+
+            <div class="ryuu-tab" data-index="4">
+              <span id="ryuu-line-english" class="ryuu-line english selected" data-language="english"
                 >This is the english sentence
               </span>
               <span id="ryuu-line-1-dutch" class="ryuu-line dutch notselected" data-language="dutch"
                 >This is the dutch sentence
               </span>
             </div>
-            <div class="ryuu-tabs" data-index="5">
-              <span id="ryuu-line-0-english" class="ryuu-line english notselected" data-language="english"
+
+            <div class="ryuu-tab" data-index="5">
+              <span id="ryuu-line-english" class="ryuu-line english notselected" data-language="english"
                 >This is the english sentence
               </span>
               <span id="ryuu-line-1-dutch" class="ryuu-line dutch selected" data-language="dutch"
                 >This is the dutch sentence
               </span>
             </div>
+
           </div>
         </div>
       </div>
     </div>
     <div class="actionsbar">
-        <button> + </button>
-        <button> o</button>
-        <button> -</button>
+      <button id="add-button">+</button>
+      <button id="switch-button">o</button>
+      <button id="remove-button">-</button>
     </div>
   </body>
 </html>
