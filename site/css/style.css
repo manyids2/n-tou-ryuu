@@ -47,6 +47,7 @@ body {
   grid-template-rows: var(--mid-size) 1fr var(--large-size);
 
   font-family: "plex";
+  background-color: #000000;
 }
 
 #navbar {
@@ -78,6 +79,7 @@ body {
   margin: auto;
   margin-top: var(--small-size);
   margin-bottom: var(--small-size);
+  overflow: hidden;
 
   display: grid;
 }
@@ -87,6 +89,7 @@ body {
   height: calc(100vh - var(--large-size) - var(--large-size));
   overflow: scroll;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .ryuu-content {
@@ -111,7 +114,7 @@ body {
 }
 
 .ryuu-line {
-  font-size: .8rem;
+  font-size: 0.8rem;
 
   padding: var(--half-size);
   overflow: hidden;
@@ -138,8 +141,11 @@ body {
   width: 1rem;
   overflow: hidden;
   word-wrap: break-word;
+  margin: 0;
+  padding: 0;
 
-  display: flex;
+  flex-shrink: 1;
+  flex-grow: 0;
 
   background-color: var(--notselected-background-color);
   color: var(--notselected-color);
@@ -162,4 +168,57 @@ body {
   flex-grow: 1;
 
   border-radius: var(--small-size);
+}
+
+.modal {
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  top: 10%;
+  left: 10%;
+  background-color: #eeeeee;
+}
+
+.language-options {
+  display: none;
+  flex-direction: column;
+}
+
+.language-back-go {
+  display: flex;
+  flex-direction: row;
+}
+
+.story-options {
+  display: none;
+}
+
+.nav-button {
+  height: var(--large-size);
+  width: var(--large-size);
+  margin: var(--small-size);
+
+  flex-grow: 1;
+
+  border: 1px solid gray;
+  border-radius: var(--small-size);
+}
+
+li {
+  margin: var(--base-size);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  list-style: none;
+  cursor: pointer;
+
+  border: 1px solid gray;
+  border-radius: var(--small-size);
+}
+
+.selected-language {
+  border: 1px solid red;
 }
