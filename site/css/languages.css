@@ -1,8 +1,32 @@
-/* .english { */
-/*   color: blue; */
-/* } */
+.english {
+  background-color: #B6D8F2;
+}
 
-/* .dutch { */
-/*   color: red; */
-/* } */
+.dutch {
+  background-color: #F4CFDF;
+}
+
+.german {
+  background-color: #EEBAB2;
+}
+
+.french {
+  background-color: #CCD4BF;
+}
+
+.spanish {
+  background-color: #EB96AA;
+}
+
+.hindi {
+  background-color: #F27348;
+}
+
+.tamil {
+  background-color: #DC828F;
+}
+
+.bengali {
+  background-color: #7B92AA;
+}
 

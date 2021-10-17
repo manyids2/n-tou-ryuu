@@ -9,6 +9,12 @@ class App {
       window.localStorage.setItem("languages", this.languages.join(","));
     }
 
+    if (window.localStorage.getItem("story")) {
+      this.story = window.localStorage.getItem("story");
+    } else {
+      window.localStorage.setItem("story", this.story);
+    }
+
     this.n = this.languages.length;
     this.numLines = 0;
     this.spans = {};
@@ -21,16 +27,25 @@ class App {
     // Ref to navbar
     this.title = document.getElementById("story-name");
     this.title.innerText = this.story;
+    this.title.addEventListener("click", this._handleAddRemoveStoryDiv);
+    this.storyBack = document.getElementById("story-back");
+    this.storyGo = document.getElementById("story-go");
+    this.storyBack.addEventListener("click", this._handleStoryBack);
+    this.storyGo.addEventListener("click", this._handleStoryGo);
+
+    this.availableStories = config.availableStories;
+    this.storyList = document.getElementById("story-list");
+    this._renderStoryList();
 
     // Ref to buttons
     this.switchBtn = document.getElementById("switch-button");
     this.switchBtn.addEventListener("click", this._cycleOrder);
 
     this.addBtn = document.getElementById("add-button");
-    this.addBtn.addEventListener("click", this._handleAddRemove);
+    this.addBtn.addEventListener("click", this._handleAddRemoveLanguageDiv);
 
     this.removeBtn = document.getElementById("remove-button");
-    this.removeBtn.addEventListener("click", this._handleAddRemove);
+    this.removeBtn.addEventListener("click", this._handleAddRemoveLanguageDiv);
 
     // Modals
     this.languageDiv = document.getElementById("language-options");
@@ -81,6 +96,10 @@ class App {
     });
   }
 
+  _handleAddRemoveLanguageDiv = () => {
+    this.languageDiv.style.display = "flex";
+  };
+
   _handleAddRemoveLanguage = (e) => {
     const language = e.target.dataset.language;
     this.selectedLanguages[language] = !this.selectedLanguages[language];
@@ -114,9 +133,37 @@ class App {
     location.reload();
   };
 
-  _handleAddRemove = () => {
-    console.log("addremove :>> ");
-    this.languageDiv.style.display = "flex";
+  _handleAddRemoveStoryDiv = () => {
+    this.storyDiv.style.display = "flex";
+  };
+
+  _handleStoryBack = () => {
+    this.storyDiv.style.display = "none";
+  };
+
+  _handleStoryGo = () => {
+    window.localStorage.setItem("story", this.story);
+    location.reload();
+  };
+
+  _handleSetStory = (e) => {
+    const story = e.target.dataset.story;
+    this.story = story;
+    this._renderStoryList();
+  };
+
+  _renderStoryList = () => {
+    this.storyList.innerHTML = "";
+    this.availableStories.forEach((story) => {
+      const item = document.createElement("li");
+      item.innerText = story;
+      item.setAttribute("data-story", story);
+      this.storyList.appendChild(item);
+      if (this.story === story) {
+        item.classList.add("selected-story");
+      }
+      item.addEventListener("click", this._handleSetStory);
+    });
   };
 
   _cycleOrder = () => {
@@ -164,7 +211,7 @@ class App {
         } else {
           this.spans[index][language].classList.add("notselected");
           this.spans[index][language].classList.remove("selected");
-          this.spans[index][language].innerText = "&nbsp;";
+          this.spans[index][language].innerText = " ";
           this.spans[index][language].style.width = `${1 / (this.languages.length - 1)}rem`;
         }
       });
@@ -176,6 +223,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const config = {
     languages: ["english", "dutch"],
     availableLanguages: ["english", "dutch", "french", "german", "spanish", "hindi", "tamil", "bengali"],
+    availableStories: ["burial-of-the-minnisink", "bakers-dozen-saki"],
     story: "burial-of-the-minnisink",
   };
 

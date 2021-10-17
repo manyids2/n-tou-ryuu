@@ -47,7 +47,6 @@ body {
   grid-template-rows: var(--mid-size) 1fr var(--large-size);
 
   font-family: "plex";
-  background-color: #000000;
 }
 
 #navbar {
@@ -132,9 +131,6 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  background-color: var(--selected-background-color);
-  color: var(--selected-color);
 }
 
 .notselected {
@@ -146,9 +142,6 @@ body {
 
   flex-shrink: 1;
   flex-grow: 0;
-
-  background-color: var(--notselected-background-color);
-  color: var(--notselected-color);
 }
 
 .actionsbar {
@@ -187,10 +180,20 @@ body {
 .language-back-go {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .story-options {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-back-go {
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-button {
@@ -220,5 +223,9 @@ li {
 }
 
 .selected-language {
+  border: 1px solid red;
+}
+
+.selected-story {
   border: 1px solid red;
 }
