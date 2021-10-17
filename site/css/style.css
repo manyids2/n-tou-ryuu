@@ -11,7 +11,7 @@
 
 :root {
   /* Sizes */
-  font-size: 128px;
+  font-size: 64px;
   --small-size: 0.3rem;
   --half-size: 0.5rem;
   --base-size: 1rem;
@@ -33,8 +33,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
 
   display: grid;
   position: relative;
@@ -43,27 +42,41 @@ body {
   font-family: "plex";
 }
 
-nav {
-  width: 100%;
+#navbar {
+  z-index: 100;
+  width: 85%;
+  top: 0px;
+  margin: auto;
+  position: sticky;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0 0 var(--small-size) var(--small-size);
+
+  background-color: #dd3122;
 }
 
 .nav__button {
   font-size: 1rem;
-  margin-left: 0;
+  margin-left: var(--large-size);
   margin-right: auto;
+  background-color: #dd3122;
+}
+
+.nav__span {
+  font-size: 1rem;
+  margin-right: var(--large-size);
+  background-color: #dd3122;
 }
 
 .mainbar {
-  width: 100%;
+  width: 85%;
+  margin: auto;
+  margin-top: var(--large-size);
 
   display: grid;
   position: relative;
-
-  outline: 1px solid red;
 }
 
 .ryuu-content {
@@ -73,24 +86,27 @@ nav {
   flex-direction: column;
 }
 
-.ryuu-line:nth-child(even) {
+.right {
   margin-left: auto;
+  text-align: right;
 }
 
-.ryuu-line:nth-child(odd) {
+.left {
   margin-right: auto;
+  text-align: left;
 }
 
 #switch-button {
-  bottom: var(--small-size);
+  z-index: 100;
   width: var(--large-size);
   height: var(--large-size);
+
+  position: sticky;
+  bottom: var(--small-size);
   left: calc(50% - var(--large-size) / 2);
 
-  position: absolute;
-
   border-radius: var(--small-size);
-  box-shadow: 0 0 0em .5em #eeeeee;
-  background: transparent;
+  box-shadow: 0 0 0em 0.5em #dd3122;
+  background: #eeeeee;
   font-size: var(--small-size);
 }
