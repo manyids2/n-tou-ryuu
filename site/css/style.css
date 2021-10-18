@@ -153,6 +153,8 @@ body {
   flex-direction: row;
 
   border-radius: var(--base-size);
+  position: sticky;
+  bottom: 0;
 }
 
 .actionsbar > button {

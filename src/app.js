@@ -1,17 +1,18 @@
 class App {
   constructor(config) {
     this.config = config;
-    this.story = config.story;
 
     if (window.localStorage.getItem("languages")) {
       this.languages = window.localStorage.getItem("languages").split(",");
     } else {
-      window.localStorage.setItem("languages", this.languages.join(","));
+      this.languages = config.languages;
+      window.localStorage.setItem("languages", this.languages);
     }
 
     if (window.localStorage.getItem("story")) {
       this.story = window.localStorage.getItem("story");
     } else {
+      this.story = config.story;
       window.localStorage.setItem("story", this.story);
     }
 
@@ -221,10 +222,10 @@ class App {
 
 window.addEventListener("DOMContentLoaded", () => {
   const config = {
-    languages: ["english", "dutch"],
+    languages: ["english", "german"],
     availableLanguages: ["english", "dutch", "french", "german", "spanish", "hindi", "tamil", "bengali"],
     availableStories: ["burial-of-the-minnisink", "bakers-dozen-saki"],
-    story: "burial-of-the-minnisink",
+    story: "bakers-dozen-saki",
   };
 
   window.app = new App(config);
