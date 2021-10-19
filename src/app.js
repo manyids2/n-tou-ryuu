@@ -224,8 +224,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const config = {
     languages: ["english", "german"],
     availableLanguages: ["english", "dutch", "french", "german", "spanish", "hindi", "tamil", "bengali"],
-    availableStories: ["burial-of-the-minnisink", "bakers-dozen-saki"],
-    story: "bakers-dozen-saki",
+    availableStories: [
+      "poetry/burial-of-the-minnisink",
+      "drama/bakers-dozen-saki",
+      "common-conversations/food",
+      "common-conversations/food2",
+    ],
+    story: "common-conversations/food",
   };
 
   window.app = new App(config);
